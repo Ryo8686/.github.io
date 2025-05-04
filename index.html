@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello GitHub Pages</title>
+  <meta charset="UTF-8" />
+  <title>Button Test</title>
+  <style>
+    body { 
+      font-family: sans-serif; 
+      max-width: 600px; 
+      margin: auto; 
+      padding: 1em; 
+      text-align: center;
+    }
+    #testBtn {
+      padding: .5em 1em;
+      font-size: 1rem;
+      border: none;
+      border-radius: .3em;
+      background: #0070f3;
+      color: white;
+      cursor: pointer;
+    }
+    #testBtn:hover {
+      background: #005bb5;
+    }
+    #message {
+      margin-top: 1em;
+      font-size: 1.2rem;
+      color: #333;
+    }
+  </style>
 </head>
-<body>
-  <h1>Hello World!</h1>
-  <p>This is my first GitHub Page.</p>
+
+  
+  <body>
+  <h1>JavaScript Button Test</h1>
+
+  <!-- ここがテスト用ボタン -->
+  <button id="testBtn">ここをクリック！</button>
+  <p id="message">まだクリックされていません。</p>
+
+  <script>
+    // ボタン要素を取得
+    const btn = document.getElementById('testBtn');
+    const msg = document.getElementById('message');
+
+    // クリック時の動作を設定
+    btn.addEventListener('click', () => {
+      msg.textContent = 'ボタンがクリックされました🎉';
+      btn.disabled = true;              // 一度だけ動作させたい場合
+      btn.textContent = '完了';         // ボタンの文言も変更
+    });
+  </script>
 </body>
 </html>
